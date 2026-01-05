@@ -90,6 +90,35 @@
       line-height:1.8; text-align:center;
     }
 
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px;
+      margin-top:40px;
+    }
+
+    @media(max-width:900px){
+      .feature-grid{grid-template-columns:1fr;}
+    }
+
+    .feature-card{
+      text-align:center;
+      background:rgba(255,255,255,0.9);
+      border-radius:22px;
+      padding:28px 24px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+      margin:15px;
+    }
+    .feature-card h5{
+      margin:12px 0 10px;
+      font-size:18px;
+    }
+    .feature-card p{
+      font-size:15px;
+      line-height:1.7;
+      color:#6a3a4a;
+    }
+
     .portfolio {
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -205,60 +234,72 @@
     feelings, and beauty in their own way.
   </p>
 
-  <div class="row mt-4 text-center">
-    <div class="col-md-4">
-      <div class="feature-card">
-        🎨
-        <h5 class="mt-2">Visual Design</h5>
-      </div>
+  <div class="feature-grid">
+    <div class="feature-card">
+      🎨
+      <h5>Visual Design</h5>
+      <p>
+        Finding myself through design. For me, design is not only about aesthetics,
+        but also about conveying meaning and emotions shaped by experiences.
+      </p>
     </div>
-    <div class="col-md-4">
-      <div class="feature-card">
-        ✏️
-        <h5 class="mt-2">Illustration & Sketching</h5>
-      </div>
+
+    <div class="feature-card">
+      ✏️
+      <h5>Illustration & Sketching</h5>
+      <p>
+        Drawing as therapy. Lines and colors become a safe space for me to calm my mind
+        and express emotions freely and honestly.
+      </p>
     </div>
-    <div class="col-md-4">
-      <div class="feature-card">
-        📸
-        <h5 class="mt-2">Fine Art Photography</h5>
-        <small>(Portrait & Street)</small>
-      </div>
+
+    <div class="feature-card">
+      📸
+      <h5>Fine Art Photography</h5>
+      <small>(Portrait & Street)</small>
+      <p>
+        Photography is about capturing simple moments—
+        a smile, warm sunset light, or footsteps on a quiet street.
+      </p>
     </div>
   </div>
 
-  <p class="text-center mt-4 fst-italic">
+  <p class="text-center mt-4 fst-italic" style="text-align:center;">
     “For me, art is a way of speaking without words.”
   </p>
 
-    <div class="col-md-4 blog-item" data-keywords="menemukan diri lewat desain desain estetika karya">
-      <div class="feature-card">
-        <h5>Finding Myself Through Design</h5>
-        <p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:40px;">
+
+  <div class="blog-item" data-keywords="menemukan diri lewat desain desain estetika karya">
+    <div class="feature-card">
+      <h5>Finding Myself Through Design</h5>
+      <p>
         Design is not only about aesthetics, but also about conveying meaning.
         Every piece I create is a reflection of emotions and experiences.
-        </p>
-      </div>
+      </p>
     </div>
-
-    <div class="col-md-4 blog-item" data-keywords="menggambar sebagai terapi garis warna menenangkan emosi">
-      <div class="feature-card">
-        <h5>Drawing as Therapy</h5>
-       <p>
-  Drawing helps me calm my mind.
-  Lines and colors become a free space to express emotions.
-</p>
-</div>
-</div>
-
-<div class="col-md-4 blog-item" data-keywords="photography capturing simple moments smile light">
-  <div class="feature-card">
-    <h5>Photography: Capturing Simple Moments</h5>
-    <p>
-      I believe beauty can be found in small things—
-      a smile, the glow of sunset light, or footsteps on a quiet street.
-    </p>
   </div>
+
+  <div class="blog-item" data-keywords="menggambar sebagai terapi garis warna menenangkan emosi">
+    <div class="feature-card">
+      <h5>Drawing as Therapy</h5>
+      <p>
+        Drawing helps me calm my mind.
+        Lines and colors become a free space to express emotions.
+      </p>
+    </div>
+  </div>
+
+  <div class="blog-item" data-keywords="photography capturing simple moments smile light">
+    <div class="feature-card">
+      <h5>Photography: Capturing Simple Moments</h5>
+      <p>
+        I believe beauty can be found in small things—
+        a smile, the glow of sunset light, or footsteps on a quiet street.
+      </p>
+    </div>
+  </div>
+
 </div>
 </div>
 </section>
@@ -284,9 +325,8 @@
 </section>
 
 <section class="section contact-gradient" id="contact">
-<section id="contact" class="newsletter text-center py-5">
   <h2>Contact</h2>
-  <p class="mt-3">
+    <p class="mt-3" style="text-align:center;">
     Interested in collaborating or just saying hello?<br>
     I’d love to connect with fellow art lovers 🤍
   </p>
