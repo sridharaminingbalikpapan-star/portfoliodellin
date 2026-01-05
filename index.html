@@ -77,7 +77,11 @@
       text-decoration:none; font-weight:bold;
     }
     .hero-image img {
-      width:100%; border-radius:26px;
+      width:100%;
+      max-width:360px;
+      aspect-ratio:4 / 6;
+      object-fit:cover;
+      border-radius:26px;
       box-shadow:0 12px 30px rgba(0,0,0,0.25);
     }
     .section { padding:70px 60px; }
@@ -98,66 +102,7 @@
     }
 
     @media(max-width:900px){
-      .bottom-nav{
-        position:fixed;
-        bottom:0; left:0; right:0;
-        height:64px;
-        background:linear-gradient(135deg,#ffe4f1,#ffd6eb);
-        display:flex;
-        justify-content:space-around;
-        align-items:center;
-        box-shadow:0 -4px 18px rgba(0,0,0,0.12);
-        z-index:999;
-      }
-      .bottom-nav a{
-        text-decoration:none;
-        color:#5a2d3c;
-        font-size:18px;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        gap:2px;
-      }
-      .bottom-nav span{
-        font-size:11px;
-      }
-
-      body{padding-bottom:70px;}
-
-
-      header{padding:12px 20px;}
-      nav{flex-wrap:wrap;gap:10px;}
-      #searchInput{width:100%;margin-left:0;}
-
-      .hero{
-        grid-template-columns:1fr;
-        padding:60px 25px;
-        text-align:center;
-      }
-      .hero-text h1{font-size:32px;}
-      .hero-text p{font-size:16px;}
-      .hero-image img{margin-top:25px;}
-
-      .section{padding:55px 25px;}
-      .section h2{font-size:28px;}
-
-      .about,.contact{
-        padding:28px 22px;
-      }
-
-      .feature-grid{
-        grid-template-columns:1fr;
-        gap:22px;
-      }
-
-      .portfolio img{
-        height:200px;
-      }
-
-      footer img{
-        height:30px;
-      }
-    }
+      .feature-grid{grid-template-columns:1fr;}
     }
 
     .feature-card{
@@ -239,45 +184,13 @@
     .contact-gradient{ background: linear-gradient(135deg, #ffe4f1, #fff1f6); }
 
     @media(max-width:900px){
-      header{padding:12px 20px;}
-      nav{flex-wrap:wrap;gap:10px;}
-      #searchInput{width:100%;margin-left:0;}
-
-      .hero{
-        grid-template-columns:1fr;
-        padding:60px 25px;
-        text-align:center;
-      }
-      .hero-text h1{font-size:32px;}
-      .hero-text p{font-size:16px;}
-      .hero-image img{margin-top:25px;}
-
-      .section{padding:55px 25px;}
-      .section h2{font-size:28px;}
-
-      .about,.contact{
-        padding:28px 22px;
-      }
-
-      .feature-grid{
-        grid-template-columns:1fr;
-        gap:22px;
-      }
-
-      .portfolio img{
-        height:200px;
-      }
-
-      footer img{
-        height:30px;
-      }
-    }
+      .hero{grid-template-columns:1fr;text-align:center;}
     }
   </style>
 </head>
 <body>
 
-<audio id="bgMusic" loop autoplay muted>
+<audio id="bgMusic" loop>
   <source src="music.mp3.mp3" type="audio/mpeg">
 </audio>
 
@@ -311,9 +224,9 @@
   </div>
 </section>
 
-<section class="section about-gradient" id="about">
-    <h2 class="text-center mb-4">About Me</h2>
-  <p class="text-center">
+<section class="section about-gradient" id="about" style="text-align:center;">
+     <h2 class="text-center mb-4">About Me</h2>
+    <p class="text-center">
    My name is <strong>Dellin Intan Puspita yuliana</strong>, a visual creator with a strong interest in graphic design, illustration, and photography.
   </p>
   <p class="text-center">
@@ -430,18 +343,9 @@
 <div class="modal" id="modal" onclick="closeModal()"><img id="modal-img"></div>
 <a class="whatsapp-chat" href="https://wa.me/62895369172060" target="_blank">💬 Chat WhatsApp</a>
 <footer>
-  <img src="Logo Dellin.png" alt="Logo Dellin" style="height:36px; margin-bottom:10px; opacity:0.9;"><br>
-  ©2025 Dellin Intan Puspita Yuliana — Creative Portfolio
+  <img src="Logo Dellin.png" alt="Logo Dellin" style="height:36px; margin-bottom:10px; opacity:0.9;">
+  <span> ©2025 Dellin Intan Puspita Yuliana — Creative Portfolio
 </footer>
-
-<!-- Bottom Navigation (Mobile Only) -->
-<nav class="bottom-nav">
-  <a href="#home">🏠<span>Home</span></a>
-  <a href="#about">👩‍🎨<span>About</span></a>
-  <a href="#portfolio">🖼️<span>Gallery</span></a>
-  <a href="#subscribe">💌<span>Subscribe</span></a>
-  <a href="#contact">📩<span>Contact</span></a>
-</nav>
 
 <script>
   const bgMusic = document.getElementById('bgMusic');
@@ -452,8 +356,12 @@
   }
 
   if (isDesktop()) {
-    window.addEventListener('load', () => {
-      bgMusic.muted = false;
+    document.addEventListener('click', () => {
+      if (bgMusic.paused) {
+        bgMusic.volume = 0.10;
+        bgMusic.play();
+      }
+    }, { once: true });
   }
 
   toggleBtn.addEventListener('click', (e) => {
