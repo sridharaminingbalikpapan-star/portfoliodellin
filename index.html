@@ -125,58 +125,7 @@
     }
 
     @media(max-width:900px){
-  /* SIMPLIFIED MOBILE LAYOUT */
-  header{
-    padding:12px 18px;
-  }
-  nav{
-    display:none; /* hide desktop nav on mobile */
-  }
-  .hero{
-    grid-template-columns:1fr;
-    padding:50px 20px;
-    gap:30px;
-  }
-  .hero-text h1{font-size:30px}
-  .hero-text p{font-size:15px}
-  .section{
-    padding:50px 20px;
-  }
-  .section h2{font-size:26px}
-  .feature-grid{
-    grid-template-columns:1fr;
-    gap:20px;
-  }
-  .portfolio{
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-  }
-  .portfolio img{height:160px}
-}
-
-/* SIMPLE BOTTOM NAV FOR MOBILE */
-.mobile-nav{
-  display:none;
-}
-@media(max-width:900px){
-  .mobile-nav{
-    display:flex;
-    position:fixed;
-    bottom:0;left:0;width:100%;
-    background:rgba(255,255,255,0.95);
-    box-shadow:0 -4px 14px rgba(0,0,0,0.15);
-    z-index:999;
-  }
-  .mobile-nav a{
-    flex:1;
-    text-align:center;
-    padding:10px 0;
-    font-size:12px;
-    color:#d45a7a;
-    text-decoration:none;
-    font-weight:600;
-  }
-}
+      .feature-grid{grid-template-columns:1fr;}
     }
 
     .feature-card{
@@ -425,12 +374,6 @@
   <span>© 2025 Dellin Intan Puspita Yuliana — Creative Portfolio</span>
 </footer>
 
-<!-- SIMPLE MOBILE NAV -->
-<div class="mobile-nav">
-  <a href="#home">🏠<br>Home</a>
-  <a href="#about">👤<br>About</a>
-  <a href="#portfolio">🖼️<br>Gall
-
 <script>
   function toggleAbout(){
     document.querySelector('.about')?.classList.toggle('active');
@@ -515,7 +458,6 @@
 
 </body>
 </html>
-
 
 
 
