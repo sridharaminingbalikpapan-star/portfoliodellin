@@ -125,8 +125,60 @@
     }
 
     @media(max-width:900px){
-  /* Mobile: hanya menyesuaikan ukuran, TIDAK mengubah desain */
-  header{padding:12px 18px;}
+  body{font-size:15px;}
+
+  header{
+    padding:12px 18px;
+  }
+
+  nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(12px);
+    box-shadow:0 -6px 18px rgba(0,0,0,0.12);
+    justify-content:space-around;
+    padding:10px 0;
+    z-index:999;
+  }
+
+  nav a{
+    font-size:13px;
+  }
+
+  #searchInput{
+    display:none;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    padding:70px 24px;
+    text-align:center;
+  }
+
+  .hero-text h1{
+    font-size:32px;
+  }
+
+  .hero-text p{
+    font-size:15px;
+  }
+
+  .hero-image img{
+    max-width:260px;
+    margin:auto;
+  }
+
+  .section{
+    padding:60px 22px 90px;
+  }
+
+  footer{
+    padding-bottom:90px;
+  }
+}
   .brand{font-size:18px;}
   header img{height:32px;}
 
@@ -262,7 +314,39 @@
   footer{font-size:13px;padding:22px;}
 }
     }
-  </style>
+      
+    /* === MOBILE BOTTOM NAV === */
+    .mobile-nav{display:none}
+    @media(max-width:900px){
+      nav{display:none}
+      .mobile-nav{
+        display:flex;justify-content:space-around;align-items:center;
+        position:fixed;bottom:0;left:0;right:0;z-index:999;
+        background:rgba(255,255,255,0.85);
+        backdrop-filter:blur(12px);
+        padding:10px 0;
+        box-shadow:0 -6px 18px rgba(0,0,0,.15)
+      }
+      .mobile-nav a{
+        text-decoration:none;color:#5a2d3c;font-size:12px;
+        display:flex;flex-direction:column;align-items:center;gap:4px
+      }
+      .mobile-nav span{font-size:18px}
+      body{padding-bottom:80px}
+    }
+
+    /* === MOBILE SEARCH POPUP === */
+    .search-popup{
+      display:none;position:fixed;inset:0;z-index:1000;
+      background:rgba(0,0,0,.6);justify-content:center;align-items:center
+    }
+    .search-box{
+      background:#fff;padding:30px;border-radius:22px;width:80%;max-width:320px;text-align:center
+    }
+    .search-box input{
+      width:100%;padding:12px 18px;border-radius:25px;border:1px solid #e3a6b8;outline:none
+    }
+
 </head>
 <body>
 
@@ -286,6 +370,25 @@
     <div class="suggestions" id="suggestions"></div>
   </nav>
 </header>
+
+<!-- MOBILE SEARCH POPUP -->
+<div class="search-popup" id="mobileSearch">
+  <div class="search-box">
+    <input type="text" placeholder="Search art..." onkeyup="searchGallery()">
+    <br><br>
+    <button onclick="closeSearch()" class="cta" style="padding:10px 24px">Close</button>
+  </div>
+</div>
+
+<!-- MOBILE BOTTOM NAV -->
+<div class="mobile-nav">
+  <a href="#home"><span>🏠</span>Home</a>
+  <a href="#about"><span>👤</span>About</a>
+  <a href="#portfolio"><span>🖼️</span>Gallery</a>
+  <a href="#subscribe"><span>💌</span>Sub</a>
+  <a href="javascript:openSearch()"><span>🔍</span>Search</a>
+</div>
+
 
 <section class="hero hero-gradient" id="home">
   <div class="hero-text">
@@ -489,6 +592,9 @@
     });
     sug.style.display = (input && found) ? 'block' : 'none';
   }
+
+  function openSearch(){document.getElementById('mobileSearch').style.display='flex'}
+  function closeSearch(){document.getElementById('mobileSearch').style.display='none'}
 
   function subscribe(){
     const email = document.getElementById('emailSub').value;
