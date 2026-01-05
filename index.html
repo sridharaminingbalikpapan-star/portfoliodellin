@@ -25,6 +25,17 @@
       z-index: 100;
     }
     header img { height: 40px; }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-family:'Birds of Paradise','Pacifico','Comic Sans MS',cursive;
+      font-size:22px;
+      font-weight:600;
+      color:#ff5fa2;
+      letter-spacing:0.5px;
+    }
     nav { display:flex; align-items:center; gap:18px; position:relative; margin-left:auto; justify-content:flex-end; }
     nav a { text-decoration:none; color:#5a2d3c; font-weight:500; }
 
@@ -208,7 +219,10 @@
 </audio>
 
 <header>
-  <img src="Logo.png" alt="Logo" />
+  <div class="brand">
+    <img src="Logo.png" alt="Logo" />
+    <span>MyPortfolio</span>
+  </div>
   <nav>
     <button id="musicToggle" title="Music ON/OFF">🎵</button>
     <a href="#home">Home</a>
