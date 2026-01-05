@@ -211,14 +211,15 @@
   <div class="portfolio">
     <img src="Work 1.png" onclick="openModal(this.src)">
     <img src="Work 2.png" onclick="openModal(this.src)">
-    <img src="Hero.png" onclick="openModal(this.src)">
+    <img src="Work 3.png" onclick="openModal(this.src)">
+    <img src="Work 4.png" onclick="openModal(this.src)">
   </div>
 </section>
 
 <section class="section subscribe-gradient" id="subscribe">
   <h2>Subscribe ✨</h2>
   <div class="contact">
-    <p>Dapatkan update karya terbaru.</p>
+    <p>Get the latest updates about my works and blog</p>
     <input type="email" id="emailSub" placeholder="Your email address" style="padding:14px;width:70%;max-width:320px;border-radius:25px;border:1px solid #e3a6b8;outline:none;"><br><br>
     <button onclick="subscribe()" style="padding:12px 30px;border:none;border-radius:30px;background:linear-gradient(135deg,#e07a9a,#d45a7a);color:white;font-weight:bold;cursor:pointer;">Subscribe</button>
     <div class="subscribe-msg" id="subMsg">Thank you for subscribing 💖</div>
@@ -233,8 +234,8 @@
 <div class="modal" id="modal" onclick="closeModal()"><img id="modal-img"></div>
 <a class="whatsapp-chat" href="https://wa.me/62895369172060" target="_blank">💬 Chat WhatsApp</a>
 <footer>
-  <img src="Logo.png" alt="Dellin Logo" style="height:36px; margin-bottom:10px; opacity:0.9;"><br>
-  © 2026 • Dellin Feminine Creative Portfolio
+  <img src="Logo Dellin.png" alt="Logo Dellin" style="height:36px; margin-bottom:10px; opacity:0.9;"><br>
+  © 2025 Dellin Intan Puspita Yuliana — Creative Portfolio
 </footer>
 
 <script>
@@ -248,7 +249,7 @@
   if (isDesktop()) {
     document.addEventListener('click', () => {
       if (bgMusic.paused) {
-        bgMusic.volume = 0.4;
+        bgMusic.volume = 0.10;
         bgMusic.play();
       }
     }, { once: true });
@@ -266,7 +267,7 @@
     }
   });
 
-  const titles = ['Work 1','Work 2','Hero Illustration'];
+  const titles = ['Work 1','Work 2','Work 3','Work 4'];
 
   function openModal(src){
     document.getElementById('modal-img').src = src;
@@ -318,3 +319,4 @@
 
 </body>
 </html>
+
